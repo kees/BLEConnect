@@ -224,8 +224,7 @@ public class DeviceControlActivity extends Activity {
 	// ACTION_GATT_DISCONNECTED: disconnected from a GATT server.
 	// ACTION_GATT_SERVICES_DISCOVERED: discovered GATT services.
 	// ACTION_DATA_AVAILABLE: received data from the device. This can be a
-	// result of read
-	// or notification operations.
+	// result of read or notification operations.
 	private final BroadcastReceiver mGattUpdateReceiver = new BroadcastReceiver() {
 		@Override
 		public void onReceive(Context context, Intent intent) {
@@ -274,8 +273,8 @@ public class DeviceControlActivity extends Activity {
 		mDeviceAddress = intent.getStringExtra(EXTRAS_DEVICE_ADDRESS);
 
 		// Set up database connection
-        datasource = new EventsDataSource(this);
-        datasource.open();
+		datasource = new EventsDataSource(this);
+		datasource.open();
         
 		// We create a new AuthSession so that we can use the Dropbox API.
 		AndroidAuthSession session = buildSession();
@@ -502,7 +501,7 @@ public class DeviceControlActivity extends Activity {
 
 					mChart.repaint();
 					mChart.zoomReset();
-				} 
+				}
 			}
 		} catch (Exception e) {
 			Log.e(TAG, "Exception while parsing: " + data);
@@ -567,8 +566,7 @@ public class DeviceControlActivity extends Activity {
 		final IntentFilter intentFilter = new IntentFilter();
 		intentFilter.addAction(BluetoothLeService.ACTION_GATT_CONNECTED);
 		intentFilter.addAction(BluetoothLeService.ACTION_GATT_DISCONNECTED);
-		intentFilter
-				.addAction(BluetoothLeService.ACTION_GATT_SERVICES_DISCOVERED);
+		intentFilter.addAction(BluetoothLeService.ACTION_GATT_SERVICES_DISCOVERED);
 		intentFilter.addAction(BluetoothLeService.ACTION_DATA_AVAILABLE);
 		return intentFilter;
 	}
