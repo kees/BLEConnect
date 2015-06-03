@@ -17,5 +17,17 @@
 *.out
 *.app
 
-bin/
-gen/
+# Build trees
+build/
+app/build/
+
+# Gradle
+gradle/
+.gradle/
+local.properties
+
+# Android Studio
+/.idea/workspace.xml
+/.idea/gradle.xml
+/.idea/misc.xml
+/.idea/libraries/*
